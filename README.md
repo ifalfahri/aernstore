@@ -2,20 +2,17 @@
 
 Aernstore is an online feedback center for customer requests, ratings, and complaints, built with Next.js and integrated with Google Sheets for simple data management. This project focuses on providing an intuitive, mobile-first interface for customers, particularly for older adults. 
 
-```Anyway, i made the logo myself. How do you think? Is it good? I hope so. I can make you one if you want, just contact me.```
+```Anyway, i made the logo myself. How do you think? Is it good? I can make you one if you want, just contact me.```
 
 <p align="center">
   <img src="./public/AernStoreV.svg" alt="Aernstore Logo" width="300">
 </p>
 
 
----
-
-
 ## Features 🎯
 - ⭐ **Rating & Complaints**: 5-star rating system with animated stars and personalized feedback forms.
 - 📦 **Item Requests**: Simple form for requesting products.
-- 📝 **Google Sheets Integration**: All feedback is stored directly in Google Sheets via Apps Script because my client like to use Sheets more.
+- 📝 **Google Sheets Integration**: All feedback is stored directly in Google Sheets via Apps Script.
 - 🎬 **Smooth Animations**: Powered by **Framer Motion** for sleek UI transitions.
 
 ## Technologies Used 🛠️
