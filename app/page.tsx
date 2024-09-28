@@ -53,10 +53,10 @@ export default function Home() {
               animate={{ opacity: [1, 0.5, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              Work in Progress
+              Belum Jadi
             </motion.h1>
             <p className="text-center text-muted-foreground">
-              We're currently working on something awesome. Stay tuned!
+              Aldo masih capek. #SaveAldo
             </p>
           </CardContent>
         </Card>

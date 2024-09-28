@@ -3,11 +3,12 @@ import * as React from "react"
 import { cn } from "@/lib/utils"
 
 export interface TextareaProps
-  // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+  
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
     //left this empty for now because eslint is complaining
   }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
 const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ className, ...props }, ref) => {
     return (
