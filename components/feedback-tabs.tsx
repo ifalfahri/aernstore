@@ -1,8 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Button } from "@/components/ui/button"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
@@ -24,13 +25,17 @@ export default function FeedbackTabs({ children }: { children: React.ReactNode }
     const [rating, setRating] = useState(0);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [showModal, setShowModal] = useState(false);
+    const [activeTab, setActiveTab] = useState(pathname)
     const [isSuccess, setIsSuccess] = useState(false);
+    const [tabBounds, setTabBounds] = useState({ width: 0, left: 0 })
+    const tabsRef = useRef<HTMLDivElement>(null)
   
+    
     const handleSubmit = async (e: React.FormEvent) => {
       e.preventDefault();
       setIsSubmitting(true);
   
-      const isRatingTab = pathname === '/feedback/rating';
+      
   
       // Tentukan sheet name berdasarkan tab yang dipilih
       const sheetName = isRatingTab ? 'Rating dan Pengaduan' : 'Request Barang';
@@ -63,7 +68,24 @@ export default function FeedbackTabs({ children }: { children: React.ReactNode }
         setRating(0);
       }
     };
+
+    const isRatingTab = pathname === '/feedback/rating';
   
+    useEffect(() => {
+        setActiveTab(pathname)
+      }, [pathname])
+
+    useEffect(() => {
+        if (tabsRef.current) {
+          const activeTabElement = tabsRef.current.querySelector(`a[href="${activeTab}"]`)
+          if (activeTabElement) {
+            const { width, left } = activeTabElement.getBoundingClientRect()
+            const containerLeft = tabsRef.current.getBoundingClientRect().left
+            setTabBounds({ width, left: left - containerLeft })
+          }
+        }
+      }, [activeTab])
+
     const getPlaceholder = () => {
       if (pathname !== '/feedback/rating') return 'Jelaskan permintaan atau saran Anda...';
       switch (rating) {
@@ -85,16 +107,44 @@ export default function FeedbackTabs({ children }: { children: React.ReactNode }
     return (
       <div className="w-full max-w-3xl mx-auto px-8 sm:px-6 lg:px-8">
         <div className="flex space-x-1 rounded-lg bg-muted p-1 mb-4" role="tablist" aria-orientation="horizontal">
-          <Link href="/feedback/rating" className={`flex-1 ${pathname === '/feedback/rating' ? 'bg-background text-foreground' : ''} px-3 py-1.5 text-sm font-medium text-center rounded-md transition-all`} role="tab">
+          <Link href="/feedback/rating" className={`flex-1 ${pathname === '/feedback/rating' ? 'bg-background text-foreground' : ''} px-3 py-1.5 text-sm font-medium text-center rounded-md transition-all`} role="tab" aria-current={isRatingTab ? "page" : undefined}>
             Rating
           </Link>
-          <Link href="/feedback/request" className={`flex-1 ${pathname === '/feedback/request' ? 'bg-background text-foreground' : ''} px-3 py-1.5 text-sm font-medium text-center rounded-md transition-all`} role="tab">
+          <Link href="/feedback/request" className={`flex-1 ${pathname === '/feedback/request' ? 'bg-background text-foreground' : ''} px-3 py-1.5 text-sm font-medium text-center rounded-md transition-all`} role="tab" aria-current={!isRatingTab ? "page" : undefined}>
             Request
           </Link>
+          <motion.div
+          className="absolute top-1 bottom-1 left-1 rounded-md bg-background"
+          initial={false}
+          animate={{
+            width: tabBounds.width,
+            x: tabBounds.left,
+          }}
+          transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+        />
+          
         </div>
   
-        {children}
-  
+        <AnimatePresence mode="wait">
+        <motion.div
+          key={pathname}
+          initial={{ opacity: 0, x: isRatingTab ? -20 : 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: isRatingTab ? 20 : -20 }}
+          transition={{ duration: 0.2 }}
+        >
+          {children}
+        </motion.div>
+      </AnimatePresence>
+          
+    <AnimatePresence mode='wait'>
+    <motion.div
+          key={pathname}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.2 }}
+        >
         <Card className="mt-4">
           <form onSubmit={handleSubmit}>
             <CardContent className="space-y-4 pt-6">
@@ -122,6 +172,8 @@ export default function FeedbackTabs({ children }: { children: React.ReactNode }
             </CardFooter>
           </form>
         </Card>
+        </motion.div>
+        </AnimatePresence>
   
         <Dialog open={showModal} onOpenChange={setShowModal}>
           <DialogContent className="w-80 rounded-lg sm:w-[500px]">
