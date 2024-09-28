@@ -25,8 +25,7 @@ export default function Home() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <Card className="max-w-md mx-4">
-          <CardContent className="flex flex-col items-center space-y-6 p-6">
+        
             <motion.div
               animate={{
                 scale: [1, 1.05, 1],
@@ -41,11 +40,11 @@ export default function Home() {
               }}
             >
               <Image
-                src="/aernsture.svg"
+                src="/AernStoreV.svg"
                 alt="AernStore"
-                width={100}
-                height={100}
-                className="rounded-full shadow-lg"
+                width={350}
+                height={350}
+                className='w-60 h-40 md:w-96 md:h-60'
               />
             </motion.div>
             <motion.h1
@@ -58,8 +57,7 @@ export default function Home() {
             <p className="text-center text-muted-foreground">
               Aldo masih capek. <a href="https://github.com/ifalfahri" className='text-primary'>#SaveAldo</a>
             </p>
-          </CardContent>
-        </Card>
+          
       </motion.div>
     </div>
   )

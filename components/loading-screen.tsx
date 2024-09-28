@@ -16,11 +16,10 @@ export function LoadingScreen() {
         }}
       >
         <Image
-          src="/aernsture.svg"
+          src="/AernStoreV.svg"
           alt="AernStore"
-          width={100}
-          height={100}
-          className="rounded-full shadow-lg"
+          width={300}
+          height={300}
         />
       </motion.div>
       <motion.div
