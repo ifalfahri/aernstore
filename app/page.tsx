@@ -19,13 +19,13 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/20 to-secondary/20">
+    <div className="max-w-screen min-h-screen flex items-center justify-center bg-gradient-to-br from-primary/20 to-secondary/20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <Card className="w-full max-w-md mx-4">
+        <Card className="max-w-md mx-4">
           <CardContent className="flex flex-col items-center space-y-6 p-6">
             <motion.div
               animate={{
@@ -41,7 +41,7 @@ export default function Home() {
               }}
             >
               <Image
-                src="/aernstore.svg?height=100&width=100"
+                src="/aernsture.svg"
                 alt="AernStore"
                 width={100}
                 height={100}
@@ -56,7 +56,7 @@ export default function Home() {
               Belum Jadi
             </motion.h1>
             <p className="text-center text-muted-foreground">
-              Aldo masih capek. #SaveAldo
+              Aldo masih capek. <a href="https://github.com/ifalfahri" className='text-primary'>#SaveAldo</a>
             </p>
           </CardContent>
         </Card>
