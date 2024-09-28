@@ -42,22 +42,16 @@ export default function FeedbackTabs({ children }: { children: React.ReactNode }
         rating: isRatingTab ? String(rating) : '',
       };
   
-      try {
-        const response = await fetch('https://script.google.com/macros/s/AKfycbx5wnt5fvKcLhyxKefIY3yjhgAkzdxyOn7b4sBcAtgVGuKxgwisZiAC_67opkm7-2v2/exec', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-          },
-          body: new URLSearchParams(data),
-          mode: 'no-cors',  // Menambahkan no-cors agar request dapat terkirim ke Google Apps Script
-        });
-  
-        // Anggap request selalu berhasil karena mode no-cors tidak memberi feedback
-        setIsSuccess(true);
-      } catch (error) {
-        setIsSuccess(false);
-      }
-  
+      await fetch('https://script.google.com/macros/s/AKfycbx5wnt5fvKcLhyxKefIY3yjhgAkzdxyOn7b4sBcAtgVGuKxgwisZiAC_67opkm7-2v2/exec', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams(data),
+        mode: 'no-cors',
+      });
+
+      setIsSuccess(true);
       setIsSubmitting(false);
       setShowModal(true);
     };
