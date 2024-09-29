@@ -25,7 +25,7 @@ export default function FeedbackLayout({ children }: { children: React.ReactNode
             width={200}
             height={200}
             className='flex justify-center items-center pb-6'
-            quality={100}
+            quality={90}
             unoptimized={true}
             />
         <FeedbackTabs>{children}</FeedbackTabs>
