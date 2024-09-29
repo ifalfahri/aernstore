@@ -20,6 +20,8 @@ export function LoadingScreen() {
           alt="AernStore"
           width={300}
           height={300}
+          quality={100}
+          unoptimized={true}
         />
       </motion.div>
       <motion.div

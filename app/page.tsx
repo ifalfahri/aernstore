@@ -44,6 +44,8 @@ export default function Home() {
                 width={350}
                 height={350}
                 className='w-60 h-40 md:w-96 md:h-60'
+                quality={100}
+                unoptimized={true}
               />
             </motion.div>
             <motion.h1
