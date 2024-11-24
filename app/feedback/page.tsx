@@ -6,8 +6,8 @@ import { Star, MessageSquare } from "lucide-react"
 export default function FeedbackOverview() {
   return (
     <div className="space-y-6">
-      <Card>
-        <CardHeader>
+      <Card className="border-0 shadow-transparent">
+        <CardHeader className="text-center">
           <CardTitle>Selamat Datang ke Feedback Center AernStore</CardTitle>
           <CardDescription>
             Silahkan pilih menu yang diinginkan.
@@ -36,9 +36,9 @@ export default function FeedbackOverview() {
                 <MessageSquare className="h-5 w-5 text-blue-500" />
                 Request Barang
               </CardTitle>
-              <CardDescription>
-                Silahkan request barang yang kamu ingin kami jual
-              </CardDescription>
+                <CardDescription>
+                Beritahu kami barang apa yang kamu ingin kami sediakan di toko kami.
+                </CardDescription>
             </CardHeader>
             <CardContent>
               <Button asChild className="w-full">
