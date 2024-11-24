@@ -7,7 +7,7 @@ export function Footer() {
         <div className="flex flex-col items-center justify-center space-y-2">
           <div className="flex items-center space-x-4">
             <a
-              href="https://instagram.com/aernstore"
+              href="https://instagram.com/aernstore_"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-pink-400 transition-colors"
@@ -15,7 +15,7 @@ export function Footer() {
               <FaInstagram size={24} />
             </a>
             <a
-              href="https://facebook.com/aernstore"
+              href="https://facebook.com/profile.php?id=100093138370890e"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-pink-400 transition-colors"
@@ -32,7 +32,7 @@ export function Footer() {
             </a>
           </div>
           <p className="text-sm text-white">
-            © {new Date().getFullYear()} AernStore. Website oleh <a href="github.com/ifalfahri" className="hover:text-pink-600">ifalfahri</a>
+            © {new Date().getFullYear()} AernStore. Website oleh <a href="github.com/ifalfahri" className="hover:text-pink-600 transition-colors">ifalfahri</a>
           </p>
         </div>
       </div>
