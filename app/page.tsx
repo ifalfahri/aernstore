@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { LoadingScreen } from '@/components/loading-screen'
 
@@ -38,14 +37,10 @@ export default function Home() {
                 repeatDelay: 1
               }}
             >
-              <Image
+              <img
                 src="/AernStoreV.svg"
                 alt="AernStore"
-                width={350}
-                height={350}
                 className='w-60 h-40 md:w-96 md:h-60'
-                quality={90}
-                unoptimized={true}
               />
             </motion.div>
             <motion.h1

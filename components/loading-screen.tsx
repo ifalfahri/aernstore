@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Image from 'next/image'
 
 export function LoadingScreen() {
   return (
@@ -15,13 +14,11 @@ export function LoadingScreen() {
           ease: [0, 0.71, 0.2, 1.01]
         }}
       >
-        <Image
+        <img
           src="/AernStoreV.svg"
           alt="AernStore"
           width={300}
           height={300}
-          quality={90}
-          unoptimized={true}
         />
       </motion.div>
       <motion.div
