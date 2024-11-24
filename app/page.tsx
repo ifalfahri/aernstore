@@ -48,12 +48,11 @@ export default function Home() {
               animate={{ opacity: [1, 0.5, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              Belum Jadi
+              Halaman Utama Belum Jadi
             </motion.h1>
             <p className="text-center text-muted-foreground">
               Aldo masih capek. <a href="https://github.com/ifalfahri" className='text-primary'>#SaveAldo</a>
             </p>
-          
       </motion.div>
     </div>
   )
