@@ -103,6 +103,10 @@ export default function FeedbackTabs({ children }: { children: React.ReactNode }
           return 'Bagikan pengalaman Anda...';
       }
     };
+
+    if (pathname === '/feedback') {
+      return <>{children}</>;
+    }
   
     return (
       <div className="w-full max-w-3xl mx-auto px-8 sm:px-6 lg:px-8">
