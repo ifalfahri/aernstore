@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react'
 import FeedbackTabs from '@/components/feedback-tabs'
 import { LoadingScreen } from '@/components/loading-screen'
+import { Footer } from '@/components/footer'
 
 export default function FeedbackLayout({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(true)
@@ -23,10 +24,11 @@ export default function FeedbackLayout({ children }: { children: React.ReactNode
             alt="AernStore"
             width={200}
             height={200}
-            className='flex justify-center items-center pb-6'
-            />
+            className='flex justify-center items-center mt-4 mb-8'
+        />
         <FeedbackTabs>{children}</FeedbackTabs>
       </main>
+      <Footer />
     </div>
   )
 }
