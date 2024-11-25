@@ -2,7 +2,9 @@
 
 Aernstore is an online feedback center for customer requests, ratings, and complaints, built with Next.js and integrated with Google Sheets for simple data management. This project focuses on providing an intuitive, mobile-first interface for customers, particularly for older adults. 
 
-```Anyway, i made the logo myself. How do you think? Is it good? I can make you one if you want, just contact me.```
+> You can check it out [here](https://aern.web.id/feedback)
+
+```Anyway, i made the logo myself. How do you think? Is it good? I can make you one if you want, contact me.```
 
 <p align="center">
   <img src="./public/AernStoreV.svg" alt="Aernstore Logo" width="300">
