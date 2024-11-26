@@ -6,6 +6,8 @@ Aernstore is an online feedback center for customer requests, ratings, and compl
 
 ```Anyway, i made the logo myself. How do you think? Is it good? I can make you one if you want, contact me.```
 
+<br>
+
 <p align="center">
   <img src="./public/AernStoreV.svg" alt="Aernstore Logo" width="300">
 </p>
